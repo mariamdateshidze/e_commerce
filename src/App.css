@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,265 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto; 
+}
+
+body{
+  background-color: #FAFAFA;
+}
+
+header{
+  position: relative;
+  background-color: #ffffff;
+  max-width: 1000px;
+  width: 100%;
+  height: 110px;
+  margin: 0 100px;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0px 0px 10px #597DBC0D;
+}
+
+.burger-menu img{
+  width: 30px;
+}
+.burger-menu img:hover{
+  width: 32px;
+  transition: all .5s;
+}
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+  align-items: center;
+}
+
+.small-icons{
+  display: flex;
+}
+
+.header-icons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.header-icons span{
+  font-size: 12px;
+  line-height: 14px;
+  color: #111111;
+  margin-top: 10px;
+  font-family: 'Sylfaen';
+}
+
+.header-icons img{
+  width: 18px;
+  position: relative;
+}
+.header-icons img:hover{
+  width: 20px;
+  transition: all .5s;
+}
+
+#thirteen{
+  position: absolute;
+  font-size: 12px;
+  line-height: 14px;
+  color: #F5621F;
+  top: 20px;
+  right: 200px;
+  font-family: 'Sylfaen';
+}
+
+
+nav{
+  margin: 40px 20px 100px 100px;
+}
+
+a{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #bbafaf;
+  font-size: 15px;
+  line-height: 17px;
+  font-family: 'Sylfaen';
+}
+
+a.active{
+  color: #000000;
+  font-size: 17px;
+}
+
+a:hover{
+  color: #000000;
+  font-size: 17px;
+  transition: all .5s;
+}
+li{
+  list-style: none;
+}
+
+
+.order{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 120px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #F5621F;
+  font-family: 'BPG Glaho';
+}
+.black-text{
+  color: #000000;
+  margin-right: 15px;
+}
+.products-blocks{
+  padding: 30px 130px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 26px;
+}
+
+.prices-of-category{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.cart-of-category{
+  width: 35px;
+ background-color: #74B42C;
+ border-radius: 4px;
+ padding: 8px;
+ margin-left: 85px;
+}
+
+.line-of-category{
+  position: absolute;
+  background-color: #111111;
+  width: 25px;
+  height: 1px;
+  left: 100px;
+  top: 394px;
+}
+
+.black{
+color: #000000;
+}
+.orange{
+  background-color: #F5621F;
+}
+.dif-food{
+  width: 140px;
+  margin-left: 40px;
+}
+.dif-prices{
+  margin-top: 60px;
+}
+.dif-prices img{
+  margin-left: 120px;
+}
+
+.main-blocks{
+  display: flex;
+  padding: 0 90px 0 90px;
+}
+
+.white-block{
+  position: relative;
+  width: 277px;
+  height: 441px;
+  background-color: #FFFFFF;
+  padding: 0 30px;
+  box-shadow: 0px 0px 20px #597DBC0D;
+  border: 1px solid #E7E7E74D;
+  margin-right: 26px;
+}
+.white-block.active{
+  display: none;
+}
+.white-block-2.active{
+  display: none;
+}
+
+.pedigri{
+  width: 140px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.white-block h5{
+  font-size: 18px;
+  line-height: 22px;
+  color: #111111;
+  margin-bottom: 9px;
+  font-family: 'Sylfaen';
+}
+
+.white-block p{
+  font-size: 12px;
+  line-height: 18px;
+  color: #6E6E6E;
+  margin-bottom: 16px;
+  font-family: 'BPG Glaho';
+}
+
+.kg-btns{
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 7px;
+  column-gap: 7px;
+}
+
+.kg-btn-single{
+  background-color: #F8F8F8;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 25px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #111111;
+  font-family: 'BPG Glaho';
+}
+
+.kg-btns button:hover{
+  background-color:#e4e4e4 ;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+
+.kg-btns{
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 7px;
+  column-gap: 7px;
+}
+
+.kg-btns button{
+  background-color: #F8F8F8;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 25px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #111111;
+  font-family: 'BPG Glaho';
+}
+
+.kg-btns button:hover{
+  background-color:#e4e4e4 ;
+  transition: all .5s;
+  cursor: pointer;
 }
