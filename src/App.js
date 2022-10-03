@@ -3,6 +3,9 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './pages/Home';
 import Product from './pages/Product';
+import Signup from './pages/Signup';
+import './i18n'
+
 
 const queryClient = new QueryClient()
 
@@ -12,7 +15,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/products/:productId" element={<Product />} />
           </Routes>
         </BrowserRouter>
     </QueryClientProvider>
