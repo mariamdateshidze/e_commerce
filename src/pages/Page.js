@@ -1,9 +1,11 @@
 
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Page( { children }) {
     const { t, i18n } = useTranslation();
-
 
     return <>
             <header className="container">
@@ -12,14 +14,15 @@ export default function Page( { children }) {
                     
                     <div className="small-icons">
                         <div className="header-icons">
-                            <span>Cart</span>
+                            <span>{t('cart')}</span>
+                            <FontAwesomeIcon icon="fa-regular fa-cart-shopping" />
                         </div>
                         <div className="header-icons">
-                            <span>Favorites</span>
+                            <span>{t('favorites')}</span>
                         </div>
                         <div>
-                            <button onClick={() => i18n.changeLanguage('ka')}>ka</button>
-                            <button onClick={() => i18n.changeLanguage('en')}>en</button>
+                            <button onClick={() => i18n.changeLanguage('ka')} className="language">KA</button>
+                            <button onClick={() => i18n.changeLanguage('en')} className="language">ENG</button>
                         </div>
                     </div>
                 </div>
@@ -33,19 +36,19 @@ export default function Page( { children }) {
                         <ul>
                             <li className="categories">
                                 <a className="categories" >
-                                all
+                                {t('all')}
                                 </a>
                                 <a className="categories" >
-                                jewellry
+                                {t('electronics')}
                                 </a>
                                 <a className="categories" >
-                                
+                                {t('jewelery')}
                                 </a>
                                 <a className="categories" >
-                               
+                                {t('man')}
                                 </a>
                                 <a className="categories">
-                               
+                                {t('woman')}
                                 </a>
                             </li>
                         </ul>

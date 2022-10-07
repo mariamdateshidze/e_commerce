@@ -18,10 +18,7 @@ return(
   <Page>
      <section className="products-blocks container">
                   {
-                      
-                          <div className="white-block" key={data.id}>
-                              
-                            
+                          <div className="white-block" key={data.id}>                           
                                   <img
                                       className="item-img"
                                       src={data.image}

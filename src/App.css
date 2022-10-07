@@ -73,7 +73,14 @@ a:hover{
 li{
   list-style: none;
 }
-
+.language{
+  padding: 6px 10px;
+  border: none;
+  background-color: rgb(252, 38, 73);
+  margin-right: 7px;
+  border-radius: 6px;
+  color: white;
+}
 .products-blocks{
   padding: 30px 130px;
   display: grid;

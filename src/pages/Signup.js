@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import Page from './Page'
 
 
@@ -20,7 +21,6 @@ const validate = (values) => {
       errors.email = 'Invalid email address';
     }
   
- 
     return errors;
   };
 
@@ -36,6 +36,13 @@ const Signup = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  const navigate = useNavigate();
+
+  const navigateToHome = () => {
+    navigate('/home');
+  };
+
   return (
     <Page>
         <form onSubmit={formik.handleSubmit}>
@@ -59,17 +66,18 @@ const Signup = () => {
                 value={formik.values.lastName}
             />
             <label htmlFor="email">Email Address</label>
-            <input
-                id="email"
-                name="email"
-                type="email"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-            />
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                />
             {
                  formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>
             }
-            <button type="submit">Submit</button>
+             <button onClick={navigateToHome}>submit</button>
+        
         </form>
     </Page>
   );

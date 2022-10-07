@@ -1,5 +1,11 @@
 {
     "store":"Store",
-    "all":"all"
+    "all":"All",
+    "cart":"Cart",
+    "favorites":"favorites",
+    "electronics":"Electronics",
+    "jewelery":"Jewelery",
+    "man":"Men's clothing",
+    "woman": "Women's clothing"
     
 }

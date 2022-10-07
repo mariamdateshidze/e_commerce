@@ -8,8 +8,7 @@ export default function Home(){
     const { data } = useQuery('products', () => apiRequest('GET', 'products'));
 
     return(
-        <Page>
-               
+        <Page>             
             <section className="products-blocks container">
                 {
                      (data || []).map(item => (
@@ -25,7 +24,7 @@ export default function Home(){
                                 <h5>{item.title}</h5>
                             </Link>
                         
-                            <h6 className="category">category: {item.category}</h6>
+                            <h6 className="category">category: {item.category} </h6>
                             <h6 className="price"> {item.price}$</h6>
                            
                         </div>
@@ -39,3 +38,4 @@ export default function Home(){
 
     )   
 }
+

@@ -14,9 +14,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/products/:productId" element={<Product />} />
+            <Route path="/" element={<Signup />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/home/products/:productId" element={<Product />} />
           </Routes>
         </BrowserRouter>
     </QueryClientProvider>
