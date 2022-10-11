@@ -25,8 +25,7 @@ export default function Home(){
                             </Link>
                         
                             <h6 className="category">category: {item.category} </h6>
-                            <h6 className="price"> {item.price}$</h6>
-                           
+                            <h6 className="price"> {item.price}$</h6>                           
                         </div>
                     ))
                 }    

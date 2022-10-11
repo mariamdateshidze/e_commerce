@@ -60,7 +60,7 @@ export default function Page( { children }) {
 
       <footer className="container">
                 <div className="footer-content">
-                   
+                     {t('rights')}    
                 </div>
         </footer>
 

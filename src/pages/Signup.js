@@ -1,18 +1,22 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import Page from './Page'
-
+import { useTranslation } from 'react-i18next';
 
 const validate = (values) => {
     const errors = {};
 
-        
     if (!values.firstName) {
         errors.firstName = 'First name is required';
     } else if (values.firstName.length < 2) {
         errors.firstName = 'First name is required';
     }
+
+    if (!values.lastName) {
+      errors.lastName = 'Last name is required';
+  } else if (values.lastName.length < 2) {
+      errors.lastName = 'Last name is required';
+  }
 
   
     if (!values.email) {
@@ -22,6 +26,7 @@ const validate = (values) => {
     }
   
     return errors;
+
   };
 
 const Signup = () => {
@@ -33,54 +38,78 @@ const Signup = () => {
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      navigateToHome();
     },
   });
-
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const navigateToHome = () => {
     navigate('/home');
   };
 
-  return (
-    <Page>
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="firstName">First Name</label>
-            <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.firstName}
-            />
-            {
-            formik.errors.firstName && <div style={{color: 'red'}}>{formik.errors.firstName}</div>
-            }
-            <label htmlFor="lastName">Last Name</label>
-            <input
-                id="lastName"
-                name="lastName"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.lastName}
-            />
-            <label htmlFor="email">Email Address</label>
+
+  return  <>
+          <header className="container">
+            <div className="header-content">
+                <h3>{t('store')}</h3>
+                
+                <div className="small-icons">
+                    <div>
+                        <button onClick={() => i18n.changeLanguage('ka')} className="language">KA</button>
+                        <button onClick={() => i18n.changeLanguage('en')} className="language">ENG</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+   
+        <form className='container formik' onSubmit={formik.handleSubmit}>
+          <div className='form-field'>
+            <label htmlFor="firstName">{t('name')}</label>
+              <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.firstName}
+              />
+              {
+              formik.errors.firstName && <div style={{color: 'red'}}>{formik.errors.firstName}</div>
+              }
+          </div>
+           <div  className='form-field'>
+              <label htmlFor="lastName">{t('lastname')}</label>
                 <input
-                    id="email"
-                    name="email"
-                    type="email"
+                    id="lastName"
+                    name="lastName"
+                    type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.email}
+                    value={formik.values.lastName}
                 />
-            {
-                 formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>
-            }
-             <button onClick={navigateToHome}>submit</button>
-        
+                {
+                formik.errors.lastName && <div style={{color: 'red'}}>{formik.errors.lastName}</div>
+                }
+           </div>
+           <div  className='form-field'>
+              <label htmlFor="email">{t('email')}</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                    />
+                {
+                    formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>
+                
+                }
+           </div>
+           
+            <button className='submit-form' type="submit">{t('submit')}</button>
+            
         </form>
-    </Page>
-  );
+ 
+   </>
 };
 
 export default Signup;

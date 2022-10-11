@@ -6,6 +6,16 @@
     "electronics":"Electronics",
     "jewelery":"Jewelery",
     "man":"Men's clothing",
-    "woman": "Women's clothing"
+    "woman": "Women's clothing",
+    "name": "First name",
+    "lastname":"Last name",
+    "email": "Email",
+    "inputname":"First name is required",
+    "inputlastname":"Last name is required",
+    "inputemail":"Required",
+    "erroremail":"Invalid email address",
+    "submit":"submit",
+    "rights":" © 2022 Company, Inc.  All rights reserved.",
+    "addcart":"Add to cart"
     
 }
