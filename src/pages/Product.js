@@ -40,15 +40,15 @@ function decrement() {
 return(
   <>
    <Page>
-     <section className="products-blocks container">
-        {
-          <div className="white-block single" key={data.id}>                           
-                  <img
-                      className="item-img one-item"
-                      src={data.image}
-                  />
-          </div>
-        }   
+     <section className="products-blocks one-prod container">
+        
+        <div className="white-block single" key={data.id}>                           
+            <img
+                className="item-img one-item"
+                src={data.image}
+            />
+        </div>
+          
 
         <div className="description">
               <h5 className="title product-title"> {data.title}$</h5>
@@ -59,9 +59,9 @@ return(
               <h6 className="price prod-price"> {data.price}$</h6>
               <div className="cart">
                   <div className="range">
-                   <button className="plus" onClick={increment}>+</button>
-                    <h1  className=" count">{count}</h1>
-                    <button  className="plus minus" onClick={decrement}>-</button>
+                    <button className="plus" onClick={increment}>+</button>
+                      <h1  className=" count">{count}</h1>
+                      <button  className="plus minus" onClick={decrement}>-</button>
                   </div>
                   <button className="submit-form">{t('addcart')} </button>   
                   <button  className="fav-button submit-form"> <MdOutlineFavoriteBorder /> </button>   

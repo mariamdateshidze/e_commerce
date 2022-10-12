@@ -3,18 +3,10 @@ import { useTranslation } from 'react-i18next';
 import {MdOutlineFavoriteBorder } from 'react-icons/md';
 import {BsCartPlus  } from 'react-icons/bs';
 import { Link} from "react-router-dom"
-import { useQuery } from "react-query"
-import apiRequest from "./apiRequest"
+
 
 export default function Page( { children }) {
     const { t, i18n } = useTranslation();
-    // const { data, setData } = useQuery('products', () => apiRequest('GET', 'products'));
-    // const filterResult = (catItem)=>{
-    //     const result = data.filter((curData)=>{
-    //         return curData.categories===catItem;
-    //     });
-    //     setData(result);
-    // }
 
     return <>
             <header className="container">

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 export default function Home(){
     const { t, i18n } = useTranslation();
     const { data} = useQuery('products', () => apiRequest('GET', 'products'));
-
+ 
     return(
         <Page>             
 
@@ -21,7 +21,7 @@ export default function Home(){
                                 <a className="categories"  >
                                 {t('all')}
                                 </a>
-                                <button className="categories" onClick={()=> filterResult('electronics')}>
+                                <button className="categories">
                                 {t('electronics')}
                                 </button>
                                 <a className="categories" >

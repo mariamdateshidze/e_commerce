@@ -12,8 +12,8 @@
 }
 
 body{
-
   background-color: #f3f1f7;
+  font-family: 'Lato', sans-serif;
 }
 
 header{
@@ -271,4 +271,68 @@ input:focus{
   background-color: rgb(230, 240, 236);
   border: 1px solid rgb(252, 38, 73);
   color: black;
+}
+
+/* responsive */
+@media (max-width: 768px){
+  .header-content{
+    padding: 40px 50px;
+  }
+  nav{
+    margin: 40px 20px 100px 50px;
+  }
+  .products-blocks{
+    padding: 30px 50px;
+    grid-template-columns: auto auto;
+  }
+  .one-prod{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px){
+  .header-content{
+    padding: 40px 30px;
+  }
+  nav{
+    margin: 40px 20px 100px 30px;
+  }
+  .products-blocks{
+    padding: 30px 30px;
+    grid-template-columns: auto;
+  }
+  .language{
+    display: none;
+  }
+  .header-icons{
+    margin-right: 10px;
+  }
+  .cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: -100px;
+  }
+  .description{
+    padding-left: 5px;
+  }
+  .cart button{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .range{
+    margin-left: 70px;
+  }
+  .single{
+    width: 250px;
+    height: 250px;
+  }
+  .footer-content{
+    font-size: 12px;
+  }
+  input{
+    width: 230px;
+  }
 }
