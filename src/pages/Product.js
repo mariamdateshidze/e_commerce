@@ -4,6 +4,7 @@ import apiRequest from "./apiRequest";
 import { useTranslation } from 'react-i18next';
 import React, { useState } from "react";
 import Page from "./Page";
+import {MdOutlineFavoriteBorder } from 'react-icons/md';
 
 export default function Product(){
   const params = useParams();
@@ -35,6 +36,7 @@ function decrement() {
   });
 }
 
+
 return(
   <>
    <Page>
@@ -57,11 +59,12 @@ return(
               <h6 className="price prod-price"> {data.price}$</h6>
               <div className="cart">
                   <div className="range">
-                    <button className="plus" onClick={increment}>+</button>
+                   <button className="plus" onClick={increment}>+</button>
                     <h1  className=" count">{count}</h1>
                     <button  className="plus minus" onClick={decrement}>-</button>
                   </div>
-                  <button className="submit-form">{t('addcart')} </button>     
+                  <button className="submit-form">{t('addcart')} </button>   
+                  <button  className="fav-button submit-form"> <MdOutlineFavoriteBorder /> </button>   
               </div>
         </div> 
       
@@ -69,6 +72,5 @@ return(
   </Page>
   </>
  
-   
   )  
 }

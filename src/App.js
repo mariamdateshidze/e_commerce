@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<Signup />} />
             <Route path="/home" element={<Home />} />
             <Route path="/home/products/:productId" element={<Product />} />
+
           </Routes>
         </BrowserRouter>
     </QueryClientProvider>

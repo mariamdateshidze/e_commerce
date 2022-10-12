@@ -42,12 +42,17 @@ header{
 }
 
 .header-icons{
+  display: flex;
+  align-items: center;
   margin-right: 30px;
 
 }
+.icons{
+  margin-right: 10px;
+}
 
 .header-icons span{
-  font-size: 14px;
+  font-size: 18px;
   line-height: 14px;
   color: rgb(252, 38, 73);
 }
@@ -62,6 +67,7 @@ a{
   color: rgb(252, 38, 73);
   font-size: 15px;
   line-height: 17px;
+  cursor: pointer;
 }
 
 a:hover{
@@ -257,4 +263,12 @@ input:focus{
 }
 .count{
   font-size: 25px;
+}
+.fav-button{
+  padding: 10px 30px;
+  font-size: 30px;
+  margin-left: 50px;
+  background-color: rgb(230, 240, 236);
+  border: 1px solid rgb(252, 38, 73);
+  color: black;
 }

@@ -1,23 +1,35 @@
 
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
+import {MdOutlineFavoriteBorder } from 'react-icons/md';
+import {BsCartPlus  } from 'react-icons/bs';
+import { Link} from "react-router-dom"
+import { useQuery } from "react-query"
+import apiRequest from "./apiRequest"
 
 export default function Page( { children }) {
     const { t, i18n } = useTranslation();
+    // const { data, setData } = useQuery('products', () => apiRequest('GET', 'products'));
+    // const filterResult = (catItem)=>{
+    //     const result = data.filter((curData)=>{
+    //         return curData.categories===catItem;
+    //     });
+    //     setData(result);
+    // }
 
     return <>
             <header className="container">
                 <div className="header-content">
-                    <h3>{t('store')}</h3>
+                    <Link to={`/home`}>
+                         <h3>{t('store')}</h3>
+                    </Link>
                     
                     <div className="small-icons">
                         <div className="header-icons">
+                             <span className='icons'><BsCartPlus /></span>
                             <span>{t('cart')}</span>
-                            <FontAwesomeIcon icon="fa-regular fa-cart-shopping" />
                         </div>
                         <div className="header-icons">
+                            <span className='icons'><MdOutlineFavoriteBorder /></span>
                             <span>{t('favorites')}</span>
                         </div>
                         <div>
@@ -30,12 +42,12 @@ export default function Page( { children }) {
 
          
 
-            <div className="container">
+            {/* <div className="container">
                 <div>
                     <nav>
                         <ul>
                             <li className="categories">
-                                <a className="categories" >
+                                <a className="categories"  >
                                 {t('all')}
                                 </a>
                                 <a className="categories" >
@@ -54,7 +66,7 @@ export default function Page( { children }) {
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </div> */}
          
       {children}
 
