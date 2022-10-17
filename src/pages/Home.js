@@ -1,47 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query"
 import { Link, useSearchParams } from "react-router-dom"
+import {BsSearch } from 'react-icons/bs';
 import apiRequest from "./apiRequest"
 import Page from './Page'
-
 import { useTranslation } from 'react-i18next';
+
+
 
 export default function Home(){
     const { t, i18n } = useTranslation();
     const { data} = useQuery('products', () => apiRequest('GET', 'products'));
- 
+    
+   const [filter, setFilter] = useState("");
+
+
+   const searchText = (event) => {
+        setFilter(event.target.value);
+   }
+    
+   let dataSearch = (data|| []).filter(item =>{
+     return Object.keys(item).some(key => 
+        item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+        )
+   })
     return(
         <Page>             
-
             <div className="container">
-                <div>
-                    <nav>
-                        <ul>
-                            <li className="categories">
-                                <a className="categories"  >
-                                {t('all')}
-                                </a>
-                                <button className="categories">
-                                {t('electronics')}
-                                </button>
-                                <a className="categories" >
-                                {t('jewelery')}
-                                </a>
-                                <a className="categories" >
-                                {t('man')}
-                                </a>
-                                <a className="categories">
-                                {t('woman')}
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                
+                   
+                    <div className="search">
+                        <label>  <span className='icons'><BsSearch /></span></label>
+                        <input 
+                        type="text" placeholder={t('search')} value={filter}
+                        onChange = {searchText.bind(this)} />
+                       
+                      
+
+
+                    </div>
+                   
+               
             </div>
-         
+            
+
             <section className="products-blocks container">
                 {
-                     (data || []).map(item => (
+                     (dataSearch || []).map(item => (
                         <div className="white-block" key={item.id}>
                             
                             <Link to={`products/${item.id}`}>
@@ -66,5 +71,6 @@ export default function Home(){
             
 
     )   
+ 
 }
 

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Signup from './pages/Signup';
 import './i18n'
+// import Cart from './pages/Cart';
 
 
 const queryClient = new QueryClient()
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Signup />} />
             <Route path="/home" element={<Home />} />
+            {/* <Route path="/cart" element={<Cart />} /> */}
             <Route path="/home/products/:productId" element={<Product />} />
 
           </Routes>

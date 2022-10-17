@@ -2,7 +2,7 @@
     "store":"Store",
     "all":"All",
     "cart":"Cart",
-    "favorites":"favorites",
+    "favorites":"Favorites",
     "electronics":"Electronics",
     "jewelery":"Jewelery",
     "man":"Men's clothing",
@@ -16,6 +16,7 @@
     "erroremail":"Invalid email address",
     "submit":"submit",
     "rights":" © 2022 Company, Inc.  All rights reserved.",
-    "addcart":"Add to cart"
+    "addcart":"Add to cart",
+    "search":"Search"
     
 }
