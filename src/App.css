@@ -47,6 +47,9 @@ header{
   margin-right: 30px;
 
 }
+#person{
+  font-size: 23px;
+}
 .icons{
   margin-right: 10px;
 }
@@ -55,6 +58,12 @@ header{
   font-size: 18px;
   line-height: 14px;
   color: rgb(252, 38, 73);
+}
+.header-icons span:hover{
+  font-size: 19px;
+  color: rgb(182, 37, 61);
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
 nav{
@@ -86,6 +95,11 @@ li{
   margin-right: 7px;
   border-radius: 6px;
   color: white;
+}
+.language:hover{
+  background-color: rgb(182, 37, 61);
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .products-blocks{
   padding: 30px 130px;
@@ -201,6 +215,12 @@ input:focus{
   border-radius: 6px;
   color: white;
   font-size: 17px;
+}
+.submit-form:hover{
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: rgb(182, 37, 61);
+ 
 }
 .search{
   display: flex;

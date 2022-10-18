@@ -34,9 +34,6 @@ export default function Home(){
                         <input 
                         type="text" placeholder={t('search')} value={filter}
                         onChange = {searchText.bind(this)} />
-                       
-                      
-
 
                     </div>
                    

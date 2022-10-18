@@ -1,13 +1,18 @@
 
 import { useTranslation } from 'react-i18next';
-import {MdOutlineFavoriteBorder } from 'react-icons/md';
-import {BsCartPlus  } from 'react-icons/bs';
+import {BsPersonCircle } from 'react-icons/bs';
+import {BsFillCartFill  } from 'react-icons/bs';
 import { Link} from "react-router-dom"
-
-
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 export default function Page( { children }) {
     const { t, i18n } = useTranslation();
+    const navigate = useNavigate();
+
+    const navigateToHome = () => {
+        navigate('/');
+    };
+
 
     return <>
             <header className="container">
@@ -18,13 +23,14 @@ export default function Page( { children }) {
                     
                     <div className="small-icons">
                         <div className="header-icons">
-                             <span className='icons'><BsCartPlus /></span>
-                            <span>{t('cart')}</span>
+                            <span className='icons' id='person'><BsPersonCircle/></span>
+                            {/* <span>{t('favorites')}</span> */}
                         </div>
                         <div className="header-icons">
-                            <span className='icons'><MdOutlineFavoriteBorder /></span>
-                            <span>{t('favorites')}</span>
+                             <span className='icons'><BsFillCartFill /></span>
+                            <span>{t('cart')}</span>
                         </div>
+                    
                         <div>
                             <button onClick={() => i18n.changeLanguage('ka')} className="language">KA</button>
                             <button onClick={() => i18n.changeLanguage('en')} className="language">ENG</button>
