@@ -4,7 +4,8 @@ import apiRequest from "./apiRequest";
 import { useTranslation } from 'react-i18next';
 import React, { useState } from "react";
 import Page from "./Page";
-import {MdOutlineFavoriteBorder } from 'react-icons/md';
+import {motion} from '../../node_modules/framer-motion/dist/framer-motion';
+
 
 export default function Product(){
   const params = useParams();
@@ -12,6 +13,7 @@ export default function Product(){
   const { data, isLoading } = useQuery(['product', productId], () => apiRequest('GET', `products/${productId}`));
   const { t, i18n } = useTranslation();
   const [count, setCount] = useState(0);
+
 
 if (isLoading) {
   return <div>
@@ -37,7 +39,18 @@ function decrement() {
 }
 
 
+
+
+
 return(
+  <motion.div
+      // className="product"
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // exit={{ opacity: 0 }}
+      // transition={{ duration: 3 }}
+    >
+
   <>
    <Page>
      <section className="products-blocks one-prod container">
@@ -63,14 +76,19 @@ return(
                       <h1  className=" count">{count}</h1>
                       <button  className="plus minus" onClick={decrement}>-</button>
                   </div>
-                  <button className="submit-form">{t('addcart')} </button>   
-                  <button  className="fav-button submit-form"> <MdOutlineFavoriteBorder /> </button>   
+                  <button className="submit-form"
+                    
+                >
+                    {t('addcart')} </button>   
+                  <button  className="fav-button submit-form">fdgfdg </button>   
               </div>
         </div> 
       
       </section>
   </Page>
   </>
- 
+  </motion.div>
+
   )  
 }
+
