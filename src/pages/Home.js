@@ -7,14 +7,10 @@ import Page from './Page'
 import { useTranslation } from 'react-i18next';
 import {motion} from '../../node_modules/framer-motion/dist/framer-motion';
 
-
-
 export default function Home(){
     const { t, i18n } = useTranslation();
     const { data} = useQuery('products', () => apiRequest('GET', 'products'));
-    
-   const [filter, setFilter] = useState("");
-
+    const [filter, setFilter] = useState("");
 
    const searchText = (event) => {
         setFilter(event.target.value);
@@ -28,28 +24,22 @@ export default function Home(){
     return(
         <motion.div
             className="home"
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // exit={{ opacity: 0.5 }}
-            // transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.5 }}
+            transition={{ duration: 1 }}
         >
 
         <Page>             
             <div className="container">
-                
-                   
                     <div className="search">
                         <label>  <span className='icons'><BsSearch /></span></label>
                         <input 
                         type="text" placeholder={t('search')} value={filter}
                         onChange = {searchText.bind(this)} />
-
                     </div>
-                   
-               
             </div>
             
-
             <section className="products-blocks container">
                 {
                      (dataSearch || []).map(item => (
@@ -72,13 +62,7 @@ export default function Home(){
                 }    
             </section> 
         </Page>
-
-        </motion.div>
-
-    
-            
-
+        </motion.div>       
     )   
- 
-}
+};
 

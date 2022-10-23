@@ -1,20 +1,23 @@
 
 import { useTranslation } from 'react-i18next';
 import {BsPersonCircle } from 'react-icons/bs';
-import {BsFillCartFill  } from 'react-icons/bs';
+import {AiFillShop  } from 'react-icons/ai';
 import { Link} from "react-router-dom"
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import {motion} from '../../node_modules/framer-motion/dist/framer-motion';
 
 export default function Page( { children }) {
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
-
-    const navigateToHome = () => {
-        navigate('/');
-    };
-
 
     return <>
+        <motion.div
+        className="product"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0.5 }}
+        transition={{ duration: 1 }}
+        ></motion.div>
+
             <header className="container">
                 <div className="header-content">
                     <Link to={`/home`}>
@@ -23,12 +26,16 @@ export default function Page( { children }) {
                     
                     <div className="small-icons">
                         <div className="header-icons">
-                            <span className='icons' id='person'><BsPersonCircle/></span>
-                            {/* <span>{t('favorites')}</span> */}
+                        <Link to={`/`}>
+                                 <span className='icons' id='person'><BsPersonCircle/></span>
+                        </Link>
+                           
                         </div>
                         <div className="header-icons">
-                             <span className='icons'><BsFillCartFill /></span>
-                            <span>{t('cart')}</span>
+                            <Link to={`/home`} className='all-items'>
+                                <span className='icons'><AiFillShop /></span>
+                                <span>{t('collection')}</span>
+                            </Link>
                         </div>
                     
                         <div>
@@ -38,35 +45,7 @@ export default function Page( { children }) {
                     </div>
                 </div>
             </header>
-
-         
-
-            {/* <div className="container">
-                <div>
-                    <nav>
-                        <ul>
-                            <li className="categories">
-                                <a className="categories"  >
-                                {t('all')}
-                                </a>
-                                <a className="categories" >
-                                {t('electronics')}
-                                </a>
-                                <a className="categories" >
-                                {t('jewelery')}
-                                </a>
-                                <a className="categories" >
-                                {t('man')}
-                                </a>
-                                <a className="categories">
-                                {t('woman')}
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div> */}
-         
+       
       {children}
 
       <footer className="container">

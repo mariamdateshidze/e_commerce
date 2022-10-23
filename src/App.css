@@ -36,7 +36,6 @@ header{
   color: rgb(5, 5, 53);
   font-size: 35px;
 }
-
 .small-icons{
   display: flex;
 }
@@ -45,6 +44,11 @@ header{
   display: flex;
   align-items: center;
   margin-right: 30px;
+
+}
+.all-items{
+  display: flex;
+  align-items: center;
 
 }
 #person{
@@ -85,14 +89,12 @@ a:hover{
   transition: all .5s;
 }
 
-li{
-  list-style: none;
-}
 .language{
   padding: 6px 10px;
+  font-size: 16px;
   border: none;
   background-color: rgb(252, 38, 73);
-  margin-right: 7px;
+  margin-right: 10px;
   border-radius: 6px;
   color: white;
 }
@@ -126,7 +128,6 @@ li{
    transform: scaleX(1.03);
    transition: all 0.5s;
 }
-
 
 .white-block h5{
   font-size: 18px;
@@ -167,37 +168,27 @@ li{
   padding: 10px 130px;
 }
 
-.search button{
-  padding: 6px 10px;
-  border: none;
-  background-color: pink;
-}
 input{
   height: 30px;
-  width: 200px;
+  width: 250px;
   margin-right: 20px;
   padding: 5px;
+  border-radius: 6px;
+  border: 1px solid rgb(131, 129, 129);
 }
 
 /* sign up */
 .formik{
   display: flex;
   flex-direction: column;
- align-items: center;
- justify-content: center;
- padding: 100px 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0px;
 }
 .form-field{
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-}
-
-input{
-  width: 300px;
-  height: 40px;
-  border-radius: 6px;
-  border: 1px solid rgb(131, 129, 129);
 }
 
 label{
@@ -231,18 +222,6 @@ input:focus{
   height: 32px;
   width: 250px;
   margin-top: -10px;
-  
-}
-
-/* footer */
-.footer-content{
-  display: flex;
-  justify-content: center;
-  padding: 70px 0px 60px 0px;
-  margin-top: 140px;
-  background-color: #FFFFFF;
-  font-size: 20px;
-  border-radius:50px 50px 0px 0px;
 }
 
 /* product */
@@ -271,38 +250,37 @@ input:focus{
 .prod-price{
   font-size: 33px;
 }
-.cart{
-  margin-top: 30px;
-  display: flex;
-}
-.range{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(230, 240, 236);
-  padding: 10px;
-  margin-right: 50px;
-  border-radius: 6px;
-  border: 1px solid rgb(252, 38, 73) ;
+
+button{
+  padding: 7px 15px;
+  font-size: 30px;
+  background-color: #FFFFFF;
+  border: 2px solid rgb(252, 38, 73) ;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.plus{
-  font-size: 25px;
-  margin:0px  30px;
-  background-color: transparent;
-  border: none;
+button.active{
+  background-color: rgb(252, 38, 73);
+  transition: all 0.5s;
+  transform: rotateX( 360deg );
 }
-.count{
-  font-size: 25px;
+.like-btn{
+  margin-top: 30px;
 }
-.fav-button{
-  padding: 10px 30px;
-  font-size: 30px;
-  margin-left: 50px;
-  background-color: rgb(230, 240, 236);
-  border: 1px solid rgb(252, 38, 73);
-  color: black;
+
+/* footer */
+.footer-content{
+  display: flex;
+  justify-content: center;
+  padding: 70px 0px 60px 0px;
+  margin-top: 140px;
+  background-color: #FFFFFF;
+  font-size: 20px;
+  border-radius:50px 50px 0px 0px;
 }
+
 
 /* responsive */
 @media (max-width: 768px){
@@ -319,6 +297,9 @@ input:focus{
   .one-prod{
     display: flex;
     flex-direction: column;
+  }
+  .search{
+    padding: 10px 50px;
   }
 }
 
@@ -339,22 +320,9 @@ input:focus{
   .header-icons{
     margin-right: 10px;
   }
-  .cart{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: -100px;
-  }
+
   .description{
     padding-left: 5px;
-  }
-  .cart button{
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-  .range{
-    margin-left: 70px;
   }
   .single{
     width: 250px;
@@ -364,6 +332,7 @@ input:focus{
     font-size: 12px;
   }
   input{
-    width: 230px;
+    width: 200px;
   }
+
 }

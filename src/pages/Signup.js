@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import {motion} from '../../node_modules/framer-motion/dist/framer-motion';
 
 const validate = (values) => {
     const errors = {};
@@ -18,7 +19,6 @@ const validate = (values) => {
       errors.lastName = 'Last name is required';
   }
 
-  
     if (!values.email) {
       errors.email = 'Required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -48,19 +48,25 @@ const Signup = () => {
     navigate('/home');
   };
 
-
   return  <>
-          <header className="container">
-            <div className="header-content">
-                <h3>{t('store')}</h3>
-                
-                <div className="small-icons">
-                    <div>
-                        <button onClick={() => i18n.changeLanguage('ka')} className="language">KA</button>
-                        <button onClick={() => i18n.changeLanguage('en')} className="language">ENG</button>
-                    </div>
-                </div>
-            </div>
+    <motion.div
+        className="product"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0.5 }}
+        transition={{ duration: 1 }}
+      ></motion.div>
+        <header className="container">
+          <div className="header-content">
+              <h3>{t('store')}</h3>
+              
+              <div className="small-icons">
+                  <div>
+                      <button onClick={() => i18n.changeLanguage('ka')} className="language">KA</button>
+                      <button onClick={() => i18n.changeLanguage('en')} className="language">ENG</button>
+                  </div>
+              </div>
+          </div>
         </header>
    
         <form className='container formik' onSubmit={formik.handleSubmit}>
@@ -105,8 +111,7 @@ const Signup = () => {
                 }
            </div>
            
-            <button className='submit-form' type="submit">{t('submit')}</button>
-            
+            <button className='submit-form' type="submit">{t('submit')}</button>  
         </form>
  
    </>
